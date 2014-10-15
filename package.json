@@ -1,0 +1,33 @@
+{
+  "name": "sload",
+  "version": "0.1.1rc3",
+  "description": "sload --> slow-load, packaging require function",
+  "author": "huyinghuan",
+  "homepage": "https://github.com/huyinghuan/sload",
+  "keywords": [
+    "slow-cli",
+    "slow"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/huyinghuan/sload.git"
+  },
+  "bugs": {
+    "url": "https://github.com/huyinghuan/sload/issues",
+    "email": "ec.huyinghuan@gmail.com"
+  },
+  "main": "lib/index",
+  "license": {
+    "type": "MIT",
+    "url": "https://gist.githubusercontent.com/huyinghuan/a03ffed8877dc6822275/raw/4a78514616df437e15daa5a010ade50f5e882e7c/LICENSE"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "dependencies": {},
+  "scripts": {
+    "pretest": "coffee --no-header -o ./ -c src/",
+    "prepublish": "coffee --no-header -o ./ -c src/",
+    "test": "node sample/index.js"
+  }
+}
