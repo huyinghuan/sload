@@ -31,8 +31,8 @@ sload = require('sload')
 sload().init([$cwd])
 ```
 
-the ```$cwd``` parameter defined the file root directory. default ```$cwd``` is 
-```process.cwd()```
+the ```$cwd``` parameter defined the file root directory. 
+default ```$cwd``` is ```process.cwd()```
 
 >Note:
 >when "$cwd" is a relative path, actually $cwd is
@@ -41,14 +41,14 @@ the ```$cwd``` parameter defined the file root directory. default ```$cwd``` is
 and in other files you can use ```sload(filepath)```, for example:
 
 a appliactions file structor:
-
+```
 -/
   -a.js
   -a
     -b.js
     -b
       -c.js
-
+```
 if ```c.js``` require ```a.js``` ,
 normally, c.js:
 
