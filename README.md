@@ -16,8 +16,8 @@ require('sload')('mydefined'[,$cwd])
 ```
 
 >Note:
->when ```$cwd``` is a relative path, actually $cwd is
->```path.join(process.cwd(), $cwd)``` in require function
+>when "$cwd" is a relative path, actually $cwd is
+>"path.join(process.cwd(), $cwd)" in require function
 
 #### sload.init
 the ```sload``` global function can be used after ```init``` called.
@@ -35,8 +35,8 @@ the ```$cwd``` parameter defined the file root directory. default ```$cwd``` is
 ```process.cwd()```
 
 >Note:
->when ```$cwd``` is a relative path, actually $cwd is
->```path.join(process.cwd(), $cwd)``` in require function
+>when "$cwd" is a relative path, actually $cwd is
+>"path.join(process.cwd(), $cwd)" in require function
 
 and in other files you can use ```sload(filepath)```, for example:
 
