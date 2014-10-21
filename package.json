@@ -1,6 +1,6 @@
 {
   "name": "sload",
-  "version": "0.1.1rc3",
+  "version": "0.1.2",
   "description": "sload --> slow-load, packaging require function",
   "author": "huyinghuan",
   "homepage": "https://github.com/huyinghuan/sload",

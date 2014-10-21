@@ -75,4 +75,11 @@ cd sload
 npm test
 ```
 
-or see the ```slow/sample``` 
+or see the ```slow/sample/index.coffee```
+ 
+ 
+### History
+
+v0.1.2
+
+1. add module Scanner
