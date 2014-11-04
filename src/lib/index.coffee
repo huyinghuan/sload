@@ -29,6 +29,7 @@ load.scan = (filePath, cwd = $cwd, options = {})->
   return queue if not _fs.statSync(moduleDir).isDirectory()
 
   ignore = if options.ignore then [].concat options.ignore else []
+  match = if options.match then [].concat options.match else []
 
   files = _fs.readdirSync moduleDir
 
@@ -41,7 +42,12 @@ load.scan = (filePath, cwd = $cwd, options = {})->
         isIgnore = true
         break
     continue if isIgnore
-    queue.push require filePath
+
+    if match.length is 0
+      queue.push require filePath
+      continue
+
+    queue.push require filePath for exp in match when exp.test filename
 
   return queue
 
