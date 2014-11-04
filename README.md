@@ -22,7 +22,7 @@ require(path.join(($cwd || process.cwd()), 'mydefined')
 >when "$cwd" is a relative path, actually 
 >$cwd === path.join(process.cwd(), $cwd)
 
-#### sload.init
+#### sload.init  Note: obsolescent. Don't suggest use it.
 the ```sload``` global function can be used after ```init``` called.
 
 ```init``` just need called once.
