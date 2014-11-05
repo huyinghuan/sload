@@ -102,13 +102,23 @@ set the require root path.(default is ```process.cwd()```)
 
 ##### options
 
-A options object. {ignore: [regexp1, regexp2, ...], match: [reg1, ..]}
+A options object. {ignore: [[regexp1|function(exp){}, ...], match: [regexp1|function(exp){}, ..]}
 
 ###### ignore
 
 the module scanner will ignore the file that match in ```ignore```  list.
 
-eg. {ignore: [/\.coffee$/]}
+```ignore``` list item can be regexp or function. if it is a function,will accept a
+argument, and remember make it return boolean.
+
+eg.
+```
+function(exp){
+  return exp.indexOf('.html') !== -1
+}
+```
+
+eg. {ignore: [/\.coffee$/, function(exp){ do thing; return false}]}
 
 if ignore is ```undefined``` , nothing will be ignored.
 

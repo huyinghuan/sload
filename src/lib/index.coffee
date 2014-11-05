@@ -1,10 +1,16 @@
 _path = require 'path'
 _fs = require 'fs'
+_ = require 'lodash'
 
 $cwd = process.cwd()
 
 isAbsolute = (path)->
   _path.resolve(path) is _path.normalize(path).replace(/(.+)([\/|\\])$/, '$1')
+
+isMatch = (reg, exp)->
+  return reg.test exp if _.isRegExp reg
+  return reg exp if _.isFunction reg
+  return false
 
 load = (filePath, cwd = $cwd)->
   modulePath = _path.join cwd, filePath
@@ -40,17 +46,16 @@ load.scan = (filePath, cwd = $cwd, options = {})->
     filePath = _path.join moduleDir, filename
     continue if _fs.statSync(filePath).isDirectory()
     isIgnore = false
-    for exp in ignore
-      if exp.test filename
-        isIgnore = true
-        break
+    for reg in ignore
+      break if isIgnore = isMatch(reg, filename)
+
     continue if isIgnore
 
     if match.length is 0
       queue.push require filePath
       continue
 
-    queue.push require filePath for exp in match when exp.test filename
+    queue.push require filePath for reg in match when isMatch(reg, filename)
 
   return queue
 

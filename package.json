@@ -1,6 +1,6 @@
 {
   "name": "sload",
-  "version": "0.1.3rc2",
+  "version": "0.1.3rc3",
   "description": "sload --> slow-load, packaging require function",
   "author": "huyinghuan",
   "homepage": "https://github.com/huyinghuan/sload",
@@ -24,7 +24,9 @@
   "engines": {
     "node": ">= 0.10.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^2.4.1"
+  },
   "scripts": {
     "pretest": "coffee --no-header -o ./ -c src/",
     "prepublish": "coffee --no-header -o ./ -c src/",
