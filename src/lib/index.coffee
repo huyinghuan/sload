@@ -54,7 +54,4 @@ load.scan = (filePath, cwd = $cwd, options = {})->
 
   return queue
 
-
-
-
 module.exports = load
