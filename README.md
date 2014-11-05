@@ -22,7 +22,7 @@ require(path.join(($cwd || process.cwd()), 'mydefined')
 >when "$cwd" is a relative path, actually 
 >$cwd === path.join(process.cwd(), $cwd)
 
-#### sload.init  Note: obsolescent. Don't suggest use it.
+#### sload.init  Note: obsolescent. Don't suggest use it. (now use sload.loader)
 the ```sload``` global function can be used after ```init``` called.
 
 ```init``` just need called once.
@@ -70,6 +70,22 @@ for example.js:
 ```
 var hello = sload('hello') # ===>  require(path.join($cwd,'hello'))
 ```
+#### sload.loader (instead sload.init)
+
+Now sload no longer provide global object ```sload``` ,just return a function.
+eg.
+
+```
+_sload = require('sload')
+global.sload = _sload.loader([$cwd])
+
+//equals
+//==>
+_sload = require('sload')
+_sload.init([$cwd])
+
+```
+
 
 #### sload.scan
 Get module list from directory.

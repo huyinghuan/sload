@@ -15,6 +15,9 @@ load.init = (cwd = $cwd)->
   global.sload = (filePath)->
     load filePath, cwd
 
+load.loader = (cwd = $cwd)->
+  (filePaht)-> load filePaht, cwd
+
 load.scan = (filePath, cwd = $cwd, options = {})->
 
   if typeof cwd isnt 'string'
