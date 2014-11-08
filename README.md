@@ -96,6 +96,8 @@ accept three arguments. ```directoryPath``` ```cwd``` ```options```
 
 the directory where is module files. (relative path.)
 
+if directory is absolute, ignore arument ```cwd``
+
 ##### cwd
 
 set the require root path.(default is ```process.cwd()```)

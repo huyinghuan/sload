@@ -30,8 +30,11 @@ load.scan = (filePath, cwd = $cwd, options = {})->
     options = cwd
     cwd = $cwd
 
-  moduleDir = _path.join cwd, filePath
-  moduleDir = _path.join $cwd, moduleDir if not isAbsolute moduleDir
+  if isAbsolute filePath
+    moduleDir = filePath
+  else
+    moduleDir = _path.join cwd, filePath
+    moduleDir = _path.join $cwd, moduleDir if not isAbsolute moduleDir
 
   queue = []
 
